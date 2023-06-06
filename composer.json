@@ -12,5 +12,7 @@
             "email": "josipzg28@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.7"
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace Sto2\DevTools;
 
+use GuzzleHttp\Client;
+
 class Console
 {
     public static function reportException(string $projectUuid, \Throwable $e): void
@@ -15,10 +17,9 @@ class Console
             'trace' => $e->getTraceAsString(),
         ];
 
-        $ch = curl_init('https://dev.sto2.hr/api/report-exception');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        curl_exec($ch);
-        curl_close($ch);
+        $client = new Client();
+        $client->post('https://dev.sto2.hr/api/report-exception', [
+            'json' => $payload,
+        ]);
     }
 }
