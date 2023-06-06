@@ -1,0 +1,16 @@
+{
+    "name": "wssto2/dev-tools",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Sto2\\DevTools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jzlimen",
+            "email": "josipzg28@gmail.com"
+        }
+    ],
+    "require": {}
+}
